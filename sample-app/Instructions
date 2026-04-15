@@ -68,6 +68,73 @@ Step 12: Verify Class Files
 • Check: target/classes 
 • Confirms successful compilation of Java classes. 
 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Jenkins Freestyle Job 
+Tasks: Pull code from GitHub, run build commands, archive artifacts. 
+Outcome: Automated builds 
+
+Aim 
+To create and execute a Jenkins Freestyle job by pulling source code from GitHub and running 
+build commands in order to understand automated build execution using Jenkins. 
+
+Theory 
+Jenkins is an open-source automation server that supports Continuous Integration by 
+automatically executing build tasks. 
+A Freestyle Job is the simplest Jenkins job type and is configured using a graphical interface. 
+It is mainly used for basic automation such as compiling code and viewing build outputs 
+through the Jenkins console. 
+
+Procedure / Steps 
+Step 1: Create GitHub Repository 
+• Create a GitHub repository named Github_Bankservice. 
+• This repository stores the source code used by Jenkins. 
+
+Step 2: Add Java Source File 
+• Create a file named BankService.java in the repository and add the given Java code. 
+• This program demonstrates a simple bank account operation for build execution. 
+
+Step 3: Open Jenkins Dashboard 
+• Open Jenkins in the browser and click New Item. 
+• This starts the job creation process. 
+
+Step 4: Create Freestyle Job 
+• Enter job name: GitHub_BankApplication 
+• Select Freestyle Project 
+• This creates a basic Jenkins job. 
+
+Step 5: Add Job Description 
+• Enter a short description for the job. → Helps in identifying the purpose of the build. 
+
+Step 6: Configure Source Code Management 
+• Select Git and enter GitHub repository URL 
+https://github.com/username/Github_Bankservice 
+• Jenkins pulls source code from GitHub. 
+
+Step 7: Add GitHub Credentials 
+• Enter GitHub Username and Password 
+• Allows Jenkins to authenticate and access the repository. 
+
+Step 8: Specify Branch to Build 
+• */main or */master 
+• Defines which branch Jenkins should build. 
+
+Step 9: Add Build Step 
+• Select Execute Windows Batch Command 
+• Enter: 
+o javac BankService.java 
+o java BankService 
+• Compiles and executes the Java program. 
+
+Step 10: Save and Build 
+• Build now → Starts the job execution. 
+
+Step 11: View Console Output 
+• Click the build number → Console Output. 
+• Displays compilation and execution results.
+
 Step 13: Execute the JAR File 
 • cd target 
 • java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.BankService 
