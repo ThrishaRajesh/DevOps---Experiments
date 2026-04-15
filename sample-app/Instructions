@@ -68,9 +68,7 @@ Step 12: Verify Class Files
 • Check: target/classes 
 • Confirms successful compilation of Java classes. 
 
-
 ----------------------------------------------------------------------------------------------------------------------------
-
 
 Jenkins Freestyle Job 
 Tasks: Pull code from GitHub, run build commands, archive artifacts. 
@@ -139,3 +137,74 @@ Step 13: Execute the JAR File
 • cd target 
 • java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.BankService 
 • Executes the packaged Maven artifact.
+
+----------------------------------------------------------------------------------------------------------------------------
+
+Jenkins Build Triggers 
+Tasks: Configure SCM polling and GitHub webhook. 
+Outcome: Automatic build triggering. 
+
+Aim 
+To understand and configure Jenkins build automation by enabling SCM polling and GitHub 
+trigger options so that builds are automatically triggered when changes occur in the GitHub 
+repository. 
+
+Theory  
+Jenkins is a Continuous Integration tool that automates building and testing of applications 
+whenever source code changes. 
+A build trigger defines when a Jenkins job should run automatically. 
+• SCM Polling allows Jenkins to periodically check the repository for changes and trigger 
+builds if updates are detected. 
+• GitHub trigger option enables Jenkins to respond to repository events (used here 
+conceptually without actual webhook configuration). 
+These triggers eliminate manual build execution and improve automation efficiency. 
+
+Procedure / Steps 
+Step 1: Create GitHub Repository 
+• Create a new GitHub repository named Github_Bankservice. 
+• This repository acts as the SCM source for Jenkins. 
+
+Step 2: Add Java Source File 
+• Create a file named BankService.java in the repository and add the given Java code. 
+• This program is used to demonstrate build execution and output validation. 
+
+Step 3: Create Jenkins Job 
+• Enter item name: GitHub_BankApplication 
+• Select Freestyle Projec 
+• Freestyle project allows easy trigger and build configuration. 
+
+Step 4: Configure Source Code Management 
+• Select Git under Source Code Management 
+• Enter Repository URL - https://github.com/username/Github_Bankservice 
+• Add GitHub Username and Password in Credentials 
+• In Branches to build, specify: */main or */master 
+• Jenkins needs repository access and branch details to fetch source code. 
+
+Step 5: Configure Build Triggers 
+• Under Build Triggers, select: 
+o GitHub hook trigger for GITScm polling 
+o Poll SCM 
+• Enter schedule: * * * * * 
+• SCM polling checks for changes every minute and triggers build automatically when 
+changes are detected 
+
+Step 6: Configure Build Steps 
+• Select Execute Windows Batch Command 
+• Enter: 
+o javac BankService.java 
+o java BankService 
+• Compiles and executes the Java program during each build. 
+
+Step 7: Save and Build 
+• Build Now → Open Console Output to verify execution 
+• Confirms correct job configuration and successful build. 
+
+Step 8: Trigger Automatic Build 
+• Modify the Java code in GitHub (e.g., change withdrawal amount from 200 to 100) 
+• Commit and push changes 
+• Jenkins automatically detects the change through SCM polling and triggers a new build. 
+
+Step 9: Verify Updated Output 
+• Check the console output of the latest build 
+• Verify output reflects updated code 
+• Confirms automatic build triggering is working correctly 
