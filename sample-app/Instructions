@@ -1,0 +1,74 @@
+Creation and Build of a Java Project Using Apache Maven 
+Tasks: Creation of Maven Repository, Maven life cycle 
+Outcome: artifactid:sample-app ‘version’ 1.0-SNAPSHOT. (jar file) 
+ 
+Aim 
+To understand the use of Apache Maven by creating a Java project using Maven archetypes, 
+executing Maven lifecycle commands, and generating a JAR artifact with version 1.0
+SNAPSHOT. 
+
+Theory  
+Apache Maven is a build automation and project management tool for Java applications. 
+It uses a Project Object Model (POM) defined in pom.xml to manage project configuration, 
+dependencies, and build processes. 
+Maven provides a standard directory structure and a predefined build lifecycle that simplifies 
+compilation, packaging, and documentation generation. 
+
+Procedure / Steps 
+Step 1: Verify Maven Installation 
+• mvn –version 
+• Confirms Maven installation and environment configuration. 
+
+Step 2: Create Maven Project Using Archetype 
+• mvn archetype:generate 
+• Generates a standard Maven project structure using online templates. 
+
+Step 3: Select Archetype 
+• Enter filter: 2309 
+• Choose number: 9 
+• Selects a basic Java application archetype with compiler support. 
+
+Step 4: Enter Project Details 
+• groupId: com.bnmit 
+• artifactId: sample-app 
+• version: 1.0-SNAPSHOT 
+• package: com.bnmit 
+• These uniquely identify the Maven project and define artifact naming. 
+
+Step 5: Verify Project Creation 
+• Check current directory for: sample-app 
+Step 6: Verify Local Maven Repository 
+• \.m2 folder → Maven stores downloaded dependencies locally to avoid repeated 
+downloads. 
+
+Step 7: Build the Project 
+• cd sample-app 
+• mvn package 
+• Compiles source code and packages it into a JAR inside the target directory. 
+
+Step 8: Clean the Project 
+• mvn clean → Deletes the target directory to remove previous build artifacts. 
+
+Step 9: Generate Project Documentation 
+• mvn site → Generates HTML project documentation in target/site. 
+Modification and Execution of Java Application 
+
+Step 10: Modify Source Code 
+• Navigate to: sample-app/src/main/java/com/bnmit/ 
+• Replace App.java content with BankService code. 
+• Demonstrates custom application execution using Maven 
+• Rename Java File: App.java → BankService.java 
+
+Step 11: Rebuild the Project 
+• mvn clean 
+• mvn package 
+• Recompiles modified source and regenerates the JAR. 
+
+Step 12: Verify Class Files 
+• Check: target/classes 
+• Confirms successful compilation of Java classes. 
+
+Step 13: Execute the JAR File 
+• cd target 
+• java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.BankService 
+• Executes the packaged Maven artifact.
