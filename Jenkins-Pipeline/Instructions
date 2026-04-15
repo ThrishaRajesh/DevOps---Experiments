@@ -1,0 +1,80 @@
+Jenkins Declarative Pipeline 
+Tasks: Create Jenkinsfile, define build and test stages. 
+Outcome: Pipeline execution understanding. 
+
+Aim 
+To create and execute a Jenkins Declarative Pipeline by defining build, test, and deploy stages 
+in order to understand pipeline-based CI execution. 
+
+Theory  
+A Jenkins Declarative Pipeline provides a structured and readable way to define Continuous 
+Integration workflows using a Jenkinsfile. 
+It divides the build process into stages, allowing Jenkins to execute, monitor, and report each 
+step clearly. 
+Declarative pipelines simplify automation and improve maintainability compared to freestyle 
+jobs. 
+
+Procedure / Steps 
+Step 1: Create a New Jenkins Job 
+• Create a new item of type Pipeline 
+• Pipeline jobs support multi-stage CI workflows. 
+
+Step 2: Add Job Description 
+• Enter a brief description of the pipeline job 
+• Improves job clarity and documentation. 
+
+Step 3: Discard Old Builds 
+• Manages storage by removing outdated pipeline runs. 
+
+Step 4: Define Declarative Pipeline Script 
+• Select Pipeline script and enable Groovy Sandbox 
+• Define stages: 
+o Build 
+o Test 
+o Deploy 
+• Declarative syntax clearly defines CI stages and execution order. 
+
+Step 5: Run the Pipeline 
+• Build Now → Triggers pipeline execution. 
+
+Step 6: Verify Console Output 
+• Console Output → Messages observes (Building…Testing…Deploying…) 
+• Confirms successful stage-wise execution.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Jenkins Pipeline Visualization and Logs 
+Tasks: View pipeline stages, analyze logs, debug failures. 
+Outcome: CI troubleshooting skills. 
+
+Aim 
+To analyse Jenkins pipeline execution using Stage View and console logs in order to understand 
+pipeline visualization and CI troubleshooting. 
+Theory 
+Jenkins provides Pipeline Visualization to graphically represent stage execution, duration, and 
+status. 
+The Stage View helps identify failed stages, execution time, and build trends, while console 
+logs assist in debugging failures. 
+This improves observability and troubleshooting in CI pipelines. 
+
+Procedure / Steps 
+Steps 1–6 are the same as Experiment 9. 
+
+Step 7: Open Pipeline Stage View 
+• Open Stage View of a built pipeline job 
+• Displays graphical representation of pipeline stages. 
+
+Step 8: Analyse Stage Execution 
+• Observe stages: Build, Test, Deploy 
+• Check: Execution time, Success / failure status 
+• Helps identify performance and failure points. 
+
+Step 9: Identify Failed Builds 
+• Red-coloured stages → failed build numbers (add line > bat 'exit')
+
+Step 10: Analyze Console Logs 
+• Provides detailed logs for error analysis. 
+
+Step 11: Compare Successful vs Failed Runs 
+• Compare timings and logs across builds 
+• Helps understand stability and pipeline behaviour.
